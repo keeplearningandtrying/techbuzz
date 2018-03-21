@@ -1,4 +1,4 @@
-package com.sivalabs.quicklinks.web.models
+package com.sivalabs.techcorner.web.models
 
 class NewLinkDTO {
     var title : String = ""

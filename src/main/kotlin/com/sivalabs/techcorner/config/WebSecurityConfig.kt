@@ -1,4 +1,4 @@
-package com.sivalabs.quicklinks.config
+package com.sivalabs.techcorner.config
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity

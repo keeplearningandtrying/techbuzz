@@ -1,7 +1,7 @@
-package com.sivalabs.quicklinks.web.controllers
+package com.sivalabs.techcorner.web.controllers
 
-import com.sivalabs.quicklinks.repositories.LinkRepository
-import com.sivalabs.quicklinks.web.models.LinkDTO
+import com.sivalabs.techcorner.repositories.LinkRepository
+import com.sivalabs.techcorner.web.models.LinkDTO
 import org.springframework.data.domain.Sort
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController

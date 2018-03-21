@@ -1,17 +1,14 @@
-package com.sivalabs.quicklinks.web.controllers
+package com.sivalabs.techcorner.web.controllers
 
-import com.sivalabs.quicklinks.entities.Link
-import com.sivalabs.quicklinks.entities.Tag
-import com.sivalabs.quicklinks.repositories.LinkRepository
-import com.sivalabs.quicklinks.repositories.TagRepository
-import com.sivalabs.quicklinks.repositories.UserRepository
-import com.sivalabs.quicklinks.web.models.NewLinkDTO
-import com.sivalabs.quicklinks.web.models.SecurityUser
+import com.sivalabs.techcorner.entities.Link
+import com.sivalabs.techcorner.entities.Tag
+import com.sivalabs.techcorner.repositories.LinkRepository
+import com.sivalabs.techcorner.repositories.TagRepository
+import com.sivalabs.techcorner.repositories.UserRepository
+import com.sivalabs.techcorner.web.models.NewLinkDTO
+import com.sivalabs.techcorner.web.models.SecurityUser
 import org.springframework.data.domain.Sort
 import org.springframework.security.core.annotation.AuthenticationPrincipal
-import org.springframework.security.core.context.SecurityContextHolder
-import org.springframework.security.core.userdetails.User
-import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*

@@ -1,8 +1,8 @@
-package com.sivalabs.quicklinks.services
+package com.sivalabs.techcorner.services
 
-import com.sivalabs.quicklinks.entities.User
-import com.sivalabs.quicklinks.repositories.UserRepository
-import com.sivalabs.quicklinks.web.models.SecurityUser
+import com.sivalabs.techcorner.entities.User
+import com.sivalabs.techcorner.repositories.UserRepository
+import com.sivalabs.techcorner.web.models.SecurityUser
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException

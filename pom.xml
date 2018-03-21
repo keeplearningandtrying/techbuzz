@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sivalabs</groupId>
-	<artifactId>quicklinks</artifactId>
+	<artifactId>tech-corner</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>quicklinks</name>
+	<name>tech-corner</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

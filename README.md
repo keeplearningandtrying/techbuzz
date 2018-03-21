@@ -1,2 +1,2 @@
-# quicklinks
-Tutorial Links for Quick Access
+# tech-corner
+Quick access to interesting technology news.

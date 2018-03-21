@@ -1,4 +1,4 @@
-package com.sivalabs.quicklinks.entities
+package com.sivalabs.techcorner.entities
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*

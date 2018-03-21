@@ -1,4 +1,4 @@
-package com.sivalabs.quicklinks
+package com.sivalabs.techcorner
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class QuicklinksApplicationTests {
+class ApplicationTests {
 
 	@Test
 	fun contextLoads() {

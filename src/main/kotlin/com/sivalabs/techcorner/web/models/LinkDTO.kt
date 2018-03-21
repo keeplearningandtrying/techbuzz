@@ -1,6 +1,6 @@
-package com.sivalabs.quicklinks.web.models
+package com.sivalabs.techcorner.web.models
 
-import com.sivalabs.quicklinks.entities.Link
+import com.sivalabs.techcorner.entities.Link
 import java.time.LocalDateTime
 
 data class LinkDTO (val id : Long?,

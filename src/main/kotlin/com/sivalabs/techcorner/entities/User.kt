@@ -1,4 +1,4 @@
-package com.sivalabs.quicklinks.entities
+package com.sivalabs.techcorner.entities
 
 import javax.persistence.*
 import javax.validation.constraints.Email

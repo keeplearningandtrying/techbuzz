@@ -1,4 +1,4 @@
-package com.sivalabs.quicklinks.entities
+package com.sivalabs.techcorner.entities
 
 import java.time.LocalDateTime
 import javax.persistence.*

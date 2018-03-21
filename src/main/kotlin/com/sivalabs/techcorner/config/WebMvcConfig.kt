@@ -1,4 +1,4 @@
-package com.sivalabs.quicklinks.config
+package com.sivalabs.techcorner.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

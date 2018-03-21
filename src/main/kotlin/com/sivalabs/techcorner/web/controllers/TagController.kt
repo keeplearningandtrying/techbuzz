@@ -1,7 +1,7 @@
-package com.sivalabs.quicklinks.web.controllers
+package com.sivalabs.techcorner.web.controllers
 
-import com.sivalabs.quicklinks.entities.Tag
-import com.sivalabs.quicklinks.repositories.TagRepository
+import com.sivalabs.techcorner.entities.Tag
+import com.sivalabs.techcorner.repositories.TagRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 

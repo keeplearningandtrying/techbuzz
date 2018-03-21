@@ -1,6 +1,6 @@
-package com.sivalabs.quicklinks.repositories
+package com.sivalabs.techcorner.repositories
 
-import com.sivalabs.quicklinks.entities.Tag
+import com.sivalabs.techcorner.entities.Tag
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 

@@ -1,6 +1,6 @@
-package com.sivalabs.quicklinks.web.models
+package com.sivalabs.techcorner.web.models
 
-import com.sivalabs.quicklinks.entities.User
+import com.sivalabs.techcorner.entities.User
 import org.springframework.security.core.authority.AuthorityUtils
 import org.springframework.security.core.userdetails.UserDetails
 

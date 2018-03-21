@@ -1,7 +1,7 @@
-package com.sivalabs.quicklinks.web.controllers
+package com.sivalabs.techcorner.web.controllers
 
-import com.sivalabs.quicklinks.entities.User
-import com.sivalabs.quicklinks.repositories.UserRepository
+import com.sivalabs.techcorner.entities.User
+import com.sivalabs.techcorner.repositories.UserRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model

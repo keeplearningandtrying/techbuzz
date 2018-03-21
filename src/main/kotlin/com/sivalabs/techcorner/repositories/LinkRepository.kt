@@ -1,6 +1,6 @@
-package com.sivalabs.quicklinks.repositories
+package com.sivalabs.techcorner.repositories
 
-import com.sivalabs.quicklinks.entities.Link
+import com.sivalabs.techcorner.entities.Link
 import org.springframework.data.domain.Sort
 import org.springframework.data.jpa.repository.JpaRepository
 

@@ -1,11 +1,11 @@
-package com.sivalabs.quicklinks
+package com.sivalabs.techcorner
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class QuicklinksApplication
+class Application
 
 fun main(args: Array<String>) {
-    runApplication<QuicklinksApplication>(*args)
+    runApplication<Application>(*args)
 }
