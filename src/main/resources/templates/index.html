@@ -43,19 +43,37 @@
 
           <div class="row">
           <div class="col-md-8">
-            <div class="list-group-item list-group-item-action" th:each="link : ${links}">
-                <h5><a target="_blank" th:href="${link.url}" th:text="${link.title}">title</a></h5>
-                <span th:each="tag : ${link.tags}">
-                    <a href="#" th:href="@{/tags/{tagName}(tagName=${tag.name})}" class="badge badge-danger" th:text="${tag.name}">tag </a>&nbsp;
-                </span>
-                <div class="link-author">
-                    Posted By : <strong th:text="${link.createdBy.name}">User</strong>
-                     On <strong th:text="${#temporals.format(link.createdOn, 'yyyy-MM-dd HH:mm')}">Date</strong>
-                </div>
+            <div  th:each="link : ${links}">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><a target="_blank" th:href="${link.url}" th:text="${link.title}">title</a></h5>
+                        <p class="card-text">
+                            <span th:each="tag : ${link.tags}">
+                                <a href="#" th:href="@{/tags/{tagName}(tagName=${tag.name})}" class="badge badge-danger" th:text="${tag.name}">tag </a>&nbsp;
+                            </span>
+                        </p>
+                        <div class="link-author">
+                            <strong th:text="${#temporals.format(link.createdOn, 'yyyy-MM-dd')}">Date</strong>
+                            by <a href="#" th:href="@{/users/{userId}(userId=${link.createdBy.id})}" th:text="${link.createdBy.name}">User</a> &nbsp;&nbsp;&nbsp;
+                            <!--
+                            <span style="color:green"><i class="far fa-thumbs-up fa-lg"></i> 1</span>&nbsp;&nbsp;
+                            <span style="color:Tomato"><i class="far fa-thumbs-down fa-lg"></i> 0</span>
+                            -->
+                        </div>
 
+                    </div>
+                </div>
             </div>
           </div>
-          <div class="col-md-4 ">
+          <div class="col-md-4">
+              <form th:action="@{/search}">
+                  <div class="input-group mb-3">
+                      <input type="search" name="q" class="form-control" placeholder="Search">
+                      <div class="input-group-append">
+                          <button class="btn btn-primary" type="submit">Search</button>
+                      </div>
+                  </div>
+              </form>
             <h4>Tags</h4>
 
             <span th:each="tag : ${allTags}">

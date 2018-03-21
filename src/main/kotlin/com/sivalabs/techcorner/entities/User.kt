@@ -25,6 +25,12 @@ class User {
     @NotBlank(message = "Name must not be blank")
     var name: String = ""
 
+    @Column(nullable = true)
+    var website: String = ""
+
+    @Column(nullable = true, length = 4000)
+    var bio: String = ""
+
     @Column(nullable = false)
     var role: String = ""
 }
