@@ -2,28 +2,26 @@ sudo: required
 language: java
 jdk: oraclejdk8
 services:
-- docker
+  - docker
 env:
   global:
-  - secure: "iTNCr4S+fOs1qg2KIyBnBeAOWy/ymav6JSlADQVNpj8S1bHDPDX+LPX58qQYG2+1/u1CtlQldKb0diVD1okKjkBpSaNjWo8f5lmNisgFdQ4sfNfI/B6CgH5/IDD6usyW5vYfLsNt227WyrwYXIrMebFm7VsplP1UcKySFEe0T5o+bR/LODYSfrTKNF0tq2xBswtVi8yvfHYYCZxOBR98r2qsAkHv8dOhouDlB0xyLZgWPKGCvN/cZ9tI1998hB78sIe/2LLG+VaAKkB3R2YT921UECD6LlOwD5Rk2q7HZmQNbRfTRWD/Jh6mPTCbUpnW+3DhWo0EiJJbt4JLKsOPxrnhtrvpG8CoM1K42K0p0/y3IrVK0Xid58sKcxOtHjCJyMH5QDq9KArFVTkTUI56YEy7exQHe3Q4VmAvZizZ8/9qnTAYGsJC3wuEyh7znIF3VH4ggdVbqMEJrvdXVcWObfrb7msfA2kUqqoWdD+p2CpUvs7MYi4yfDUcJg+OFHeJJ9DupHI+1H2g0m2E//uKGv68myipQb3sZwOJd0gfdIsBoSdOQ87xTJ/PpA9YengLWeup1+3gftmcRAtRLi0EoVnXiZOJHQAj7P5mGSN9IFLF/2PL6Q8tc7muvG9VQ28ABU1WlWljwDzecD7SueLdgWuFNvI48qf/jjyrU8loO9w="
-  - secure: "FNilXQxZGzZcYsP7LoJSgxWRd0So6FUOj6WXKqxd8/3pfi2QBzvGf2h2O041RlBdza6d6r/q4IqRk9AAFPMKSJBys0xqphEir5IaERURRcFxrMWfheBbsGEhLFNCtPUWpHvVVALo16dp43C53/XtshKG7xXGfEDWH9znwmDaKL8Vh4HYQud3y+00DSBRavdlJPXfGnEOaN+EV66zdppx7jM2irrPuev/pMYt74swTPBDnsZhyI4zVZp0Jw85XrPLgU2Qw2iOsitvKK+TU/C4T4DGM3nEcQSlDa/a670YnlBgAR7jR/8ACR2mzSO+9U2O6HaXlV4ABoy2RuACAsHPpbiVHWMqpOobyfOd0QPXuSAK6raPJGgdAIqV5aKWGuSSot3ICLi5Y9ntCJGVPM2WD7+kCLtjgMaZHp4uxTvb0f3swytDiS/PdwU1YvshL93Us8fyR+lbF98qp71GejtpkOuswbR6zsgyFQzbNe1SpGSTAXK7zoZHp9vfQ79nPmEjdrmaccNzrWjod8RJdM+N/RcP/K17l4ytkOAUipUwWLifCAtJFs2x5YIaHpPTRQyxBryxiLazwQa/bDDNWHguKPFvtYc8AFXV4cDoNjFJQoykdo/SkhfNl2as7Mizg2olsISIu6gh6Uc4hPDyDqn9b1/3o/hUBqO/Qz4u484qJZM="
-  - secure: "GEwr0fYfX8dGuSTcx1JIrje5VcCgy+KftS/jmS6/cjAkWpPyo3LXDnQsG/9vDE7Q+bzNkGONZXbIl2bEZdTqZWr3FSP+qQjZrVpBkyyict/ej36obbvHVJV0sNNMNryJtXJHsWD2+22rVU46qI062Ybc8Bx3qUuQ7KMlMctPWF8YsgjTuQYcKFYb1IQPuXb8VjCqpBZGIBfCwVxLPcstUziZ/UPKXJq0r0LUfUGvH8W++RIDYqwWCemuKGbHVGMRQ0UPku0wV1Tc5bH+Yy83UzNRgs0QS16LjlzlZv5zJixPf3N3w2IPZ+dilXe1nQsyb7ywIF0ycXNuCDJ+fXP3GhkbqTcqijbwOwTNloIV/hsM1VX8zAQjoYP1ku80T+8+0nUl4uEH18gW1XAfNW/Utr82+gtvro+cDBtHnjG9Cy9Wv0gt1KYJWAG4AS9+cP258mBhCHQG/3xRj/b7/kRGWwibxRwcGJJi3CHKeNeONqO9xsTdN1GXUXAEpAjfSixEyYA0uLba2IF1eRn4g72U+UmaBk9bxY/wKir+hHLxFtOwGfLM1nznlQ8+JX7bU7sOJZwnEjVP0+Rlt8HbRqt+G66hkzNwlUu4YByZv6ChH9ot94LdI3ZYaEolnkD+PaP5hj7AIiL/c+Saz1ApvI4cdyeqAo2+FflkjY+Qdhvfnxw="
-  - secure: "dpXnPYbKuxNHUPPjNaq6NS/R29mZaGaV1Ntqar+xA7ckIU0yrJHM6zTDMqeY2eonwxzQ+6AEtxSFQTy9P1Lqxqzrwxk8xMoAMJH4Yd3XXCDCC3GVNNz0+JHGacZHSwep69y643R2z/U+wDv2UHnSSFQXp10g/m5jDIl7EIZk5BJ9mpm5zuPH8ymViYSskF6Sw+Mu7PZkndjYT9FBtjRS39n5AX4g3gltCmJxzM5hTx8qAzHCiWrRH1Jn4jr1/1dYt12DBAgvrWv+A20s+w8lIcb8egHvJO9nyNV+LqKYVPQPunJ6wPouQ5X21dyFrRyg6mubxWvHV+y1OYFcD8dC4jumy4JtykeG879+3iR6tAxUgUH9jqMYRPKhxqsWKg+5gdlUPoCHRy0WM7A/ZPsDf3prnKdsKrKrF1aOwchBt04xiQQ5vXpt85EM0je1QpK37MHxjD+yQ9MhDUx9hCROGKHqeFE73gRMN0PRY3WIjnBHcEP3OdOf6RbSTJq8pp9tWUFiSrPLVWA78e25iQZyY8UpQwxgHmqx00EUCG7PtMyTj/zaenghevGaf+IfMM4h/OMftwD6XM54+tSW2CMLS9oWNx33L+KV/x9sMjVbmzWbNO3iZbf47O5jNca7iSSEYNTsWOE+r4QmesTgLDCQDYGorBmQW9zpgw5Q21jInU0="
-  - COMMIT=${TRAVIS_COMMIT::7}
+    - secure: "oPzZjUaHEpPemeaqhtYJV7rhmSl+yJO6dUOrco7CUJ1X9Iza3TDPtgSQiB6kMvBk2WO+xVKQR9wIbeYRqKzfDAvGHGKfCkZ11pak3ojkh9d7+q7wjWcOEBBdU3WQgiS8cDGR+iEsgam7u8UB+1J7xoYU868Oh6PXhOhujFwo04F6co7Umf0PHm8d8c8fsMNsWtmlvKNJKkaN2Cjdy9Nk2k3daIrUxkqnhIJ1W0KO+LK+QaDKwAhxIJQderE6Uion/l66sUY7r2UaQs/Ck9J9/9sXFte6R/54+GlNmkpBIpuk+QvhEs/+i0R0kVFJYTn7UVZvbEVjsGCljmXixtEW+lzpzfcowhhNGyrTjI/4xXfVphDnrlWiQAXPrQ52jRQOA4gWfKNlRfa89guJ/OJKV/CgOBGa61ZUU1BbDcR8DWvW8cvR35GdwBqSIt4GRD3rdWVpo3ZUWzwZPR54flFqM2363qk37vRmxaTaY4KNvOQBmHksRgYWf850QonBf834PRUA/O/qKjX6yTZqabfD7sburjsG7TyL+/L3IK3iVtCKVjFVXk0IFggj5blk3C7oPm0M1rERxU55AMB3Fxonso1EnY4ExH/gjUhOd4+Jy5lli3Ct80UsBUBqL6VCiXJtKrtfgscm9o98VYhAO+nShCo5PJTamMAPfpNsaqQvFnY="
+    - secure: "YBj1GUWmOmFrS8Sy9mKwNejOaODJpjIa5HsOsaZs2gEJnV54Ni3LygjhQMzjXDWXthn5hztZNBd1k7pIo1SX/7h2C0bQGSZfx8QuE45L+oO8SaVqnhxDBfuEPISBh22zt+FY59cc63H82a4Yy+lY4KGBo49tS1atszUHkXHPTzg5RDqhl9hsaZPL+Feds8m0ZY9POKXMBfAGyY/U30kuSJzGIf8p1/iR13pnlyV2tcqpjWOMYwPVVLNpBLc72slkSWXnCCKqUZLo7J1WahJ4kunAdtxVY1sLU1w5Kl7ubTzKz6p1b8IIIjL/cEwrXft3TqbFSDsRjWgF5SCY5elDmZfYzw8i9+923EXoniQtDvnXvzZ3f8ZrJjkrBePJqxWO/nzPjTAbUBLfYrm+znrpkIqUZqu4GUo24YesgW6PfaC89ndYLrWVhkfhYe7ATS88qmimiImMVROYupEosHZUjcz4B1pKAZXGWUAVOb4RUXUjXXqoCLHdMxeB5E9ibwRWfSWWoEr/n9FkodRkkOXDyzqkGvzGR+bufroyF6ujLRQfqH1Ye+c0UOYX5+9iaVvcs24KgUUeeRGsceSucnGnyZ2mauWiZ5+rS7mufr5hjMh8c1Dndkl8AXRPsbV4nDNnrVmz6pWYpzohpX2G3UYp7vCqnWSErYL3tgPDi/qFdyI="
+    - COMMIT=${TRAVIS_COMMIT::7}
 
 script:
-- ./mvnw clean install -B
+  - ./mvnw clean install -B
 
 cache:
   directories:
     - '$HOME/.m2/repository'
 
 after_success:
-- docker login -u $DOCKER_USER -p $DOCKER_PASS
-- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
-  ; fi`
-- export IMAGE_NAME=sivaprasadreddy/tech-corner
-- docker build -t $IMAGE_NAME:$COMMIT .
-- docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
-- docker push $IMAGE_NAME
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
+    ; fi`
+  - export IMAGE_NAME=sivaprasadreddy/tech-corner
+  - docker build -t $IMAGE_NAME:$COMMIT .
+  - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
+  - docker push $IMAGE_NAME
 
