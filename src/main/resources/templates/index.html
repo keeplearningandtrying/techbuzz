@@ -1,118 +1,69 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <title>MySearch</title>
-    <style>
-        body {
-            padding-top: 75px;
-        }
-    </style>
+    <title>Home</title>
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="container">
-        <a class="navbar-brand" href="#">QuickLinks</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        </div>
-      </nav>
-
-  
-      <main  id="app" role="main" class="container">
-  
-        <div>
-            <form>
-                <div class="form-group">
-                  <input type="search" class="form-control" id="query" v-model="query"
-                         placeholder="search for"> <br/>
-                  <div v-if="searchTag != ''" class="alert alert-primary" role="alert">
-
-                      Filtering by Tag: <span class="badge badge-danger">{{searchTag}} </span>&nbsp;
-                      <button type="button" class="close" aria-label="Close" v-on:click="clearFilters()">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                </div>
-              </form>
-              <div class="row">
-              <div class="col-md-8">
-                <div class="list-group-item list-group-item-action" v-for="item in filteredData">
-                    <h5><a  target="_blank" v-bind:href="item.url">{{item.title}}</a></h5>
-                    <span v-for="tag in item.tags">
-                        <a href="#"  class="badge badge-danger" v-on:click="addSearchTag(tag)">{{tag}} </a>&nbsp;
-                    </span>
-                    
-                </div>
-              </div>
-              <div class="col-md-4 ">
-                <h4>Tags</h4>
-                
-                <span v-for="tag in allTags">
-                        <a href="#" class="badge badge-danger" v-on:click="addSearchTag(tag)">{{tag}} </a>&nbsp;
-                </span>
-              </div>
+    <div layout:fragment="content">
+        <div class="collapse" id="addlink" style="padding-bottom: 10px;">
+            <div class="card card-body">
+                <form method="post" th:action="@{/links}">
+                    <h5>Submit New Link</h5>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="title" placeholder="Enter Title"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="url" placeholder="Enter URL"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="tags" placeholder="Comma separated tags"/>
+                    </div>
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Submit</button>
+                </form>
             </div>
         </div>
-  
-      </main><!-- /.container -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-    <script src="data.js"></script>
-    <script>
-        var app2 = new Vue({
-            el: '#app',
-            data: {
-                data: data,
-                query: '',
-                searchTag: ''
-            },
-            methods: {
-                addSearchTag : function(tag) {
-                    this.searchTag = tag;
-                },
-                clearFilters: function() {
-                    this.searchTag = '';
-                    //this.query = '';
-                }
-            },
-            computed: {
-                filteredData () {
-                //const { title, url, tags } = this
-                var searchTagFilteredData = this.data
-                    .filter(item =>  this.searchTag=='' || item.tags.indexOf(this.searchTag) > -1);
-                return searchTagFilteredData
-                    .filter(item => item.title.toLowerCase().indexOf(this.query.toLowerCase()) > -1 ||
-                        item.url.toLowerCase().indexOf(this.query.toLowerCase()) > -1 ||
-                        item.tags.join().toLowerCase().indexOf(this.query.toLowerCase()) > -1
-                    )
-                    
-                },
-                allTags () {
-                    var tags = [];
-                    for (var i = 0; i < data.length; i++) {
-                        var item = data[i];
-                        for (var j = 0; j < item.tags.length; j++) {
-                            var tag = item.tags[j];
-                            if(tags.indexOf(tag) == -1) {
-                                tags.push(tag);
-                            }
-                        }
-                    }
-                    return tags;
-                }
-            }
-        });
-    </script>
+        <div style="padding-bottom: 30px;">
+            <div th:if="${searchTag != null}">
+                <strong>Filtering by Tag: <span class="badge badge-danger" th:text="${searchTag}">searchTag </span>&nbsp;</strong>
+                <a th:href="@{/}" class="btn btn-sm btn-warning">Clear</a>
+            </div>
+
+            <div th:if="${q != null}">
+                <strong>Search results for: <span th:text="${q}">query </span>&nbsp;</strong>
+                <a th:href="@{/}" class="btn btn-sm btn-warning">Clear</a>
+            </div>
+        </div>
+
+          <div class="row">
+          <div class="col-md-8">
+            <div class="list-group-item list-group-item-action" th:each="link : ${links}">
+                <h5><a target="_blank" th:href="${link.url}" th:text="${link.title}">title</a></h5>
+                <span th:each="tag : ${link.tags}">
+                    <a href="#" th:href="@{/tags/{tagName}(tagName=${tag.name})}" class="badge badge-danger" th:text="${tag.name}">tag </a>&nbsp;
+                </span>
+                <div class="link-author">
+                    Posted By : <strong th:text="${link.createdBy.name}">User</strong>
+                     On <strong th:text="${#temporals.format(link.createdOn, 'yyyy-MM-dd HH:mm')}">Date</strong>
+                </div>
+
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <h4>Tags</h4>
+
+            <span th:each="tag : ${allTags}">
+                <a href="#" th:href="@{/tags/{tagName}(tagName=${tag.name})}" class="badge badge-danger" th:text="${tag.name}">tag </a>&nbsp;
+            </span>
+          </div>
+        </div>
+    </div>
+
   </body>
 </html>
