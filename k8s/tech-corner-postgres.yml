@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tech-corner-app
+  namespace: default
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: tech-corner-app
+      labels:
+        app: tech-corner-app
+    spec:
+      containers:
+        - image: sivaprasadreddy/tech-corner:latest
+          imagePullPolicy: Always
+          name: tech-corner-app
+          env:
+            - name: spring.profiles.active
+              value: k8s
+            - name: POSTGRES_USER
+              value: siva
+            - name: POSTGRES_PASSWORD
+              value: sivalabs
+            - name: POSTGRES_HOST
+              value: techcorner-database
+            - name: POSTGRES_PORT
+              value: 5432
+          ports:
+            - containerPort: 8080
