@@ -1,0 +1,8 @@
+app:
+  name: TechBuzz-API
+server:
+  port: 9090
+jwt:
+  header: Authorization
+  expires_in: 604800 # 1 week : 7 * 24 * 60 * 60 seconds
+  secret: mysecret
