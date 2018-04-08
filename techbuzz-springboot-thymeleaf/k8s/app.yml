@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: tech-corner-app
+  name: techbuzz-app
   namespace: default
 spec:
   replicas: 1
@@ -9,14 +9,14 @@ spec:
     type: Recreate
   template:
     metadata:
-      name: tech-corner-app
+      name: techbuzz-app
       labels:
-        app: tech-corner-app
+        app: techbuzz-app
     spec:
       containers:
-        - image: sivaprasadreddy/tech-corner:latest
+        - image: sivaprasadreddy/techbuzz:latest
           imagePullPolicy: Always
-          name: tech-corner-app
+          name: techbuzz-app
           env:
             - name: spring.profiles.active
               value: k8s
@@ -25,7 +25,7 @@ spec:
             - name: POSTGRES_PASSWORD
               value: sivalabs
             - name: POSTGRES_HOST
-              value: techcorner-database
+              value: postgres
             - name: POSTGRES_PORT
               value: 5432
           ports:
